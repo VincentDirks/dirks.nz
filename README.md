@@ -29,5 +29,7 @@ Open `redeploy.conf`<br>
 add `/etc/systemd/system/docker-compose.service` to the `Custom Files and Folders` section<br>
 This should retain the service during redeploys, it should only need to be done once when creating the environment. 
 
+   Note: depending on how the `setupServiceDaemon.sh` file was created, you may need to give it execute privildges before the script will run. <br>
+   `git update-index --chmod=+x setupServiceDaemon.sh`
 ## License
 [![Hippocratic License HL3-CORE](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-CORE&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/core.html)
