@@ -1,5 +1,5 @@
 [Unit]
-Description=Playwright container with docker compose
+Description=Node.js container with docker compose
 After=docker.service
 Requires=docker.service
 

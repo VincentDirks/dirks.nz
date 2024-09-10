@@ -1,0 +1,59 @@
+{
+  "type": "install",
+  "name": 1725924918894,
+  "description": { "text": "dirks-nz.mel.cloudlets.com.au" },
+  "nodes": [
+    {
+      "docker": {
+        "cmd": "systemctl start docker-compose",
+        "env": {
+          "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "STACK_PATH": "/home/jelastic",
+          "STACK_USER": "docker",
+          "HOME_DIR": "/home/jelastic",
+          "MASTER_IP": "10.100.2.175",
+          "MASTER_ID": "9161",
+          "JELASTIC_EXPOSE": "false",
+          "MASTER_HOST": "node9161"
+        }
+      },
+      "tag": "27.1.2-almalinux-9",
+      "cloudlets": 1,
+      "diskLimit": "200G",
+      "displayName": "Engine Node",
+      "scalingMode": "STATEFUL",
+      "isSLBAccessEnabled": false,
+      "nodeType": "dockerengine",
+      "nodeGroup": "cp"
+    },
+    {
+      "docker": {
+        "cmd": "/usr/lib/systemd/systemd",
+        "env": {
+          "DOCKER_EXPOSED_PORT": "22,443,5000,80",
+          "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "UPSTREAM_KEEPALIVE": "100",
+          "MASTER_IP": "10.100.3.117",
+          "OWASP_MODSECURITY_CRS_VERSION": "3.1.1",
+          "MASTER_ID": "9165",
+          "PROXY_READ_TIMEOUT": "300",
+          "WORKER_PROCESSES": "auto",
+          "NGINX_VERSION": "1.26.2",
+          "MASTER_HOST": "node9165"
+        }
+      },
+      "tag": "1.26.2-almalinux-9",
+      "cloudlets": 1,
+      "diskLimit": "200G",
+      "scalingMode": "STATEFUL",
+      "isSLBAccessEnabled": false,
+      "extip": 1,
+      "nodeType": "nginx-dockerized",
+      "nodeGroup": "bl"
+    }
+  ],
+  "ssl": true,
+  "engine": "",
+  "categories": ["export"],
+  "version": "8.8.1"
+}
