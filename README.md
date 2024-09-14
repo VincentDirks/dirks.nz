@@ -99,9 +99,17 @@ And if the cloudlet is up and running you can access it below
          * from `Load Balancer` &DoubleRightArrow; `Web SSH` &DoubleRightArrow; Execute command `curl -iL test.dirks.nz`<br>
            *which should respond with the content programmed in the application*
 
-1. Configure nginx
+1. Copy nginx.conf to correct location
+   * `Load Balancer` &DoubleRightArrow; `Web SSH` (terminal window icon)
+   * Execute
+   ```
+   cp /root/application/CloudletsEnvironment/LoadBalancer/chatGPT/nginx.conf /etc/nginx/nginx.conf
+   ```
+-rw-rw-r--+  1 root root 2618 Sep 11 20:02 nginx.conf
+
    * `Load Balancer` &DoubleRightArrow; `Config` (spanner icon)
-   * Open `nginx` folder &DoubleRightArrow; file `nginx-jelastic.conf`
+   * Open `nginx` folder &DoubleRightArrow; file `nginx.conf`
+   * Copy contents
    1. redirect http (port 80) to https (port 443)
       * locate the server {...} node that listens to port 80. Eg. 
          ```
